@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+<style>
+    .container {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .form-group {
+        margin: 20px 0;
+    }
+
+    .form-control {
+        display: inline-block;
+        width: auto;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-left: 10px;
+    }
+
+    .chart-container {
+        width: 100%;
+        max-width: 600px; /* Max width for better responsiveness */
+        margin: 20px auto; /* Center the charts and add some margin */
+        height: 400px; /* Adjust height for the charts */
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1, h2 {
+        margin: 20px 0;
+    }
+    #chartContainer {
+            width: 80%;
+            height: 80vh;
+            margin: auto;
+        }
+</style>
+<div class="container">
+    <h1>{{ title }}</h1>
+    <div class="form-group">
+        <label for="chartType">اختر نوع الرسم البياني:</label>
+        <select id="chartType" class="form-control">
+            <option value="pie">Pie Chart</option>
+            <option value="bar" >Bar Chart</option>
+        </select>
+    </div>
+    <div class="row">
+        <div class="chart-container" id="pieChartContainer">
+            <canvas id="tfidfPieChart"></canvas>
+        </div>
+        <div class="chart-container" id="barChartContainer" style="display: none;">
+            <canvas id="tfidfBarChart"></canvas>
+        </div>
+        <div id="chartContainer">
+            <canvas id="groupedBarChart"></canvas>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="{{ url_for('static',filename='js/charts.js') }}"></script>
+
+{% endblock %}
