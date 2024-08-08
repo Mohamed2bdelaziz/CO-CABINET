@@ -1,4 +1,4 @@
-# CO-CAPINET
+# CO-CABINET
 ## Project Overview
 The Egyptian government receives a large number of complaints and feedback on a daily basis. Managing and addressing these complaints efficiently is a significant challenge. To assist with this, we developed a system that helps administrators classify complaints into the correct categories and provides concise summaries of the complaints. This project leverages modern natural language processing techniques, including Aya LLM, to achieve accurate classification and summarization of Arabic text.
 
